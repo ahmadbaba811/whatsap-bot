@@ -1,9 +1,19 @@
 {
     "service_list": [
-        {"1":"Airtime topup"},
-        { "2":"Buy Data"},
-        {"3":"Buy Electricity Bill"},
-        {"4":"Pay Texes"}
+        {
+            "1": "Airtime topup"
+        },
+        {
+            "2": "Buy Data"
+        },
+        {
+            "3": "Buy Electricity Bill"
+        },
+        {
+            "4": "Pay Texes"
+        },
+        {
+            "0": "Restart"
+        }
     ]
 }
-
