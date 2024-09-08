@@ -1,7 +1,9 @@
+import pyodbc
 from flask import Flask, jsonify, request, session
 from transformers import pipeline
 from twilio.twiml.messaging_response import MessagingResponse
 
+import src.dbcon as db
 import src.functions as functions
 import src.services as services
 
@@ -54,6 +56,8 @@ service_providers = {
 
 user_data = {}
 logging_in = False
+# print("Available ODBC Drivers:")
+services.get_data()
 
 
 @app.route("/bot", methods=["POST"])
@@ -66,6 +70,8 @@ def bot():
     msg = resp.message()
 
     output = functions.create_profile(user_data, incoming_message, phone_number)
+
+    # output = functions.login_to_account(user_data, incoming_message, phone_number)
 
     msg.body(output)
     return str(resp)
